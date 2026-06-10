@@ -22,9 +22,8 @@ class Order(Base):
     id = Column(Integer, primary_key=True, index=True)
     order_date = Column(DateTime, default=func.now())
     status = Column(SQLAlchemyEnum(OrderStatus, name="order_status"), default=OrderStatus.PENDING)
-    quantity = Column(Integer, default=1, nullable=False) # تعداد کتاب در این سفارش
-    total_price = Column(Numeric(12, 2), nullable=False) # قیمت کل سفارش (quantity * book.price)
-
+    quantity = Column(Integer, default=1, nullable=False) 
+    total_price = Column(Numeric(12, 2), nullable=False) 
 
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     book_id = Column(Integer, ForeignKey("books.id"), nullable=False)

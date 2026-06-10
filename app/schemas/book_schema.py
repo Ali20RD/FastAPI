@@ -11,7 +11,7 @@ class BookBase(BaseModel):
 
 
 class BookCreate(BookBase):
-    # author_id معمولاً از توکن احراز هویت می‌آد، اما اگر بخوای از ورودی هم بگیری:
+   
     author_id: Optional[int] = None
 
 
